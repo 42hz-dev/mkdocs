@@ -1,1 +1,23 @@
-site_name: My Docs
+site_name: 42Hz Dev Docs
+site_url: https://mkdocs.42hzs.com
+site_description: Infrastructure & Backend Documentation
+site_author: Shin Dongyeol
+
+theme:
+  name: material
+  language: ko
+
+markdown_extensions:
+  - admonition
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.superfences
+  - pymdownx.highlight
+
+nav:
+  - Home: index.md
+  - Infrastructure:
+    - 소개: infrastructure/index.md
+    - CI/CD:
+      - 소개: infrastructure/cicd/index.md
