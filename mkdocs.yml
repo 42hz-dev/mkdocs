@@ -18,5 +18,9 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Infrastructure:
-    - CI/CD: infrastructure/cicd/index.md
+    - CI/CD & Telegram:
+      - CI/CD: infrastructure/cicd/index.md
+      - Telegram:
+        - Check: infrastructure/cicd/telegram_check.md
+        - Send_Message: infrastructure/cicd/telegram_message.md
     - Grafana: infrastructure/grafana/index.md 
