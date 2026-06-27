@@ -37,6 +37,68 @@ jobs:
           path: site/
           retention-days: 7
 
+      - name: Telegram - Build Success
+        if: success()
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+            -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+            -d parse_mode="Markdown" \
+            -d text="✅ *Build Success*
+                      📦 Repository
+                      ${{ github.repository }}
+
+                      🌿 Branch
+                      ${{ github.ref_name }}
+
+                      👤 Actor
+                      ${{ github.actor }}
+
+                      📝 Commit
+                      ${{ github.sha }}
+
+                      💬 Message
+                      ${{ github.event.head_commit.message }}
+
+                      ⚙️ Workflow
+                      ${{ github.workflow }}
+
+                      🔗 Run URL
+                      ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+                      ⏰ Time
+                      $(date '+%Y-%m-%d %H:%M:%S')"
+
+      - name: Telegram - Build Failed
+        if: failure()
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+            -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+            -d parse_mode="Markdown" \
+            -d text="❌ *Build
+                      📦 Repository
+                      ${{ github.repository }}
+
+                      🌿 Branch
+                      ${{ github.ref_name }}
+
+                      👤 Actor
+                      ${{ github.actor }}
+
+                      📝 Commit
+                      ${{ github.sha }}
+
+                      💬 Message
+                      ${{ github.event.head_commit.message }}
+
+                      ⚙️ Workflow
+                      ${{ github.workflow }}
+
+                      🔗 Run URL
+                      ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+                      ⏰ Time
+                      $(date '+%Y-%m-%d %H:%M:%S')"
+
   deploy:
     name: Deploy MkDocs
     runs-on: ubuntu-latest
@@ -69,3 +131,71 @@ jobs:
         run: |
           ssh ${{ vars.USERNAME }}@${{ vars.HOST }} \
             "echo 'Deploy Success' && ls -lah /var/www/mkdocs | head"
+
+      - name: Telegram - Deploy Success
+        if: success()
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+            -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+            -d parse_mode="Markdown" \
+            -d text="🚀 *Deploy Success*
+                      🌐 Site
+                      https://mkdocs.42hzs.com
+
+                      📦 Repository
+                      ${{ github.repository }}
+
+                      🌿 Branch
+                      ${{ github.ref_name }}
+
+                      👤 Actor
+                      ${{ github.actor }}
+
+                      📝 Commit
+                      ${{ github.sha }}
+
+                      💬 Message
+                      ${{ github.event.head_commit.message }}
+
+                      ⚙️ Workflow
+                      ${{ github.workflow }}
+
+                      🔗 Run URL
+                      ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+                      ⏰ Time
+                      $(date '+%Y-%m-%d %H:%M:%S')"
+
+      - name: Telegram - Deploy Failed
+        if: failure()
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${{ secrets.TELEGRAM_BOT_TOKEN }}/sendMessage" \
+            -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
+            -d parse_mode="Markdown" \
+            -d text="🔥 *Deploy Failed*
+                      🌐 Site
+                      https://mkdocs.42hzs.com
+
+                      📦 Repository
+                      ${{ github.repository }}
+
+                      🌿 Branch
+                      ${{ github.ref_name }}
+
+                      👤 Actor
+                      ${{ github.actor }}
+
+                      📝 Commit
+                      ${{ github.sha }}
+
+                      💬 Message
+                      ${{ github.event.head_commit.message }}
+
+                      ⚙️ Workflow
+                      ${{ github.workflow }}
+
+                      🔗 Run URL
+                      ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+                      ⏰ Time
+                      $(date '+%Y-%m-%d %H:%M:%S')"
