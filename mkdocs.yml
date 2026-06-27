@@ -18,6 +18,5 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Infrastructure:
-    - 소개: infrastructure/index.md
-    - CI/CD:
-      - 소개: infrastructure/cicd/index.md
+    - CI/CD: infrastructure/cicd/index.md
+    - Grafana: infrastructure/grafana/index.md 
