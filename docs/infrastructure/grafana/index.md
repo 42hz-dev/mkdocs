@@ -4,6 +4,22 @@
 
 ---
 
+# 모니터링 확인
+
+현재 구축된 Grafana 대시보드는 아래 URL에서 확인할 수 있습니다.
+
+| 항목 | 내용 |
+|------|------|
+| URL | http://115.68.217.104:3000/d/rYdddlPWk/node-exporter-full?orgId=1&from=now-24h&to=now&timezone=browser&var-ds_prometheus=ffqdamu3n9zpce&var-job=node&var-nodename=fourtwo-290888&var-node=localhost:9100&refresh=1m |
+| ID | admin |
+| Password | admin |
+
+> **현재는 단일 서버(Node Exporter 1대)만 연결되어 있습니다.**
+>
+> 추후 여러 서버를 추가할 경우 Prometheus의 `scrape_configs`에 Node Exporter를 등록하면 Grafana에서 동일한 Dashboard로 여러 서버를 선택하여 모니터링할 수 있습니다.
+
+---
+
 # 시스템 구성
 
 ```text
@@ -13,15 +29,6 @@ Monitoring Server
 ├── Prometheus     (9090)
 └── Node Exporter  (9100)
 ```
-
----
-
-# 현재 서버 운영 모니터링
-
-URL : http://115.68.217.104:3000/d/rYdddlPWk/node-exporter-full?orgId=1&from=now-24h&to=now&timezone=browser&var-ds_prometheus=ffqdamu3n9zpce&var-job=node&var-nodename=fourtwo-290888&var-node=localhost:9100&refresh=1m
-
-ID : admin
-PASSWD : admin
 
 ---
 
