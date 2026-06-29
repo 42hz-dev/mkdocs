@@ -16,6 +16,15 @@ Monitoring Server
 
 ---
 
+# 현재 서버 운영 모니터링
+
+URL : http://115.68.217.104:3000/d/rYdddlPWk/node-exporter-full?orgId=1&from=now-24h&to=now&timezone=browser&var-ds_prometheus=ffqdamu3n9zpce&var-job=node&var-nodename=fourtwo-290888&var-node=localhost:9100&refresh=1m
+
+ID : admin
+PASSWD : admin
+
+---
+
 # 1. 사용자 생성
 
 보안을 위해 Prometheus와 Node Exporter를 별도의 계정으로 실행합니다.
