@@ -24,3 +24,4 @@ nav:
         - Check: infrastructure/cicd/telegram_check.md
         - Send_Message: infrastructure/cicd/telegram_message.md
     - Grafana: infrastructure/grafana/index.md 
+    - Docker: infrastructure/docker/index.md
