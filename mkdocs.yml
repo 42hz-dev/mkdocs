@@ -6,6 +6,8 @@ site_author: Shin Dongyeol
 theme:
   name: material
   language: ko
+  features:
+    - navigation.expand
 
 markdown_extensions:
   - admonition
