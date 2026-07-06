@@ -10,7 +10,7 @@
 
 | 항목 | 내용 |
 |------|------|
-| URL | http://115.68.217.104:3000/d/rYdddlPWk/node-exporter-full?orgId=1&from=now-24h&to=now&timezone=browser&var-ds_prometheus=ffqdamu3n9zpce&var-job=node&var-nodename=fourtwo-290888&var-node=localhost:9100&refresh=1m |
+| URL | https://grafana.42hzs.com/d/rYdddlPWk/node-exporter-full?orgId=1&from=now-24h&to=now&timezone=browser&var-ds_prometheus=ffqdamu3n9zpce&var-job=node&var-nodename=fourtwo-290888&var-node=localhost:9100&refresh=1m |
 | ID | admin |
 | Password | admin |
 
