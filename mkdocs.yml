@@ -20,7 +20,7 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Infrastructure:
-    - Backup
+    - Backup:
       - Window: infrastructure/backup/window.md
     - CI/CD & Telegram:
       - CI/CD: infrastructure/cicd/index.md
