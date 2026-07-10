@@ -44,29 +44,29 @@ jobs:
             -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
             -d parse_mode="Markdown" \
             -d text="✅ *Build Success*
-                      📦 Repository
-                      ${{ github.repository }}
+          📦 Repository
+          ${{ github.repository }}
 
-                      🌿 Branch
-                      ${{ github.ref_name }}
+          🌿 Branch
+          ${{ github.ref_name }}
 
-                      👤 Actor
-                      ${{ github.actor }}
+          👤 Actor
+          ${{ github.actor }}
 
-                      📝 Commit
-                      ${{ github.sha }}
+          📝 Commit
+          ${{ github.sha }}
 
-                      💬 Message
-                      ${{ github.event.head_commit.message }}
+          💬 Message
+          ${{ github.event.head_commit.message }}
 
-                      ⚙️ Workflow
-                      ${{ github.workflow }}
+          ⚙️ Workflow
+          ${{ github.workflow }}
 
-                      🔗 Run URL
-                      ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          🔗 Run URL
+          ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-                      ⏰ Time
-                      $(date '+%Y-%m-%d %H:%M:%S')"
+          ⏰ Time
+          $(date '+%Y-%m-%d %H:%M:%S')"
 
       - name: Telegram - Build Failed
         if: failure()
@@ -75,29 +75,29 @@ jobs:
             -d chat_id="${{ secrets.TELEGRAM_CHAT_ID }}" \
             -d parse_mode="Markdown" \
             -d text="❌ *Build
-                      📦 Repository
-                      ${{ github.repository }}
+          📦 Repository
+          ${{ github.repository }}
 
-                      🌿 Branch
-                      ${{ github.ref_name }}
+          🌿 Branch
+          ${{ github.ref_name }}
 
-                      👤 Actor
-                      ${{ github.actor }}
+          👤 Actor
+          ${{ github.actor }}
 
-                      📝 Commit
-                      ${{ github.sha }}
+          📝 Commit
+          ${{ github.sha }}
 
-                      💬 Message
-                      ${{ github.event.head_commit.message }}
+          💬 Message
+          ${{ github.event.head_commit.message }}
 
-                      ⚙️ Workflow
-                      ${{ github.workflow }}
+          ⚙️ Workflow
+          ${{ github.workflow }}
 
-                      🔗 Run URL
-                      ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+          🔗 Run URL
+          ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
-                      ⏰ Time
-                      $(date '+%Y-%m-%d %H:%M:%S')"
+          ⏰ Time
+          $(date '+%Y-%m-%d %H:%M:%S')"
 
   deploy:
     name: Deploy MkDocs
